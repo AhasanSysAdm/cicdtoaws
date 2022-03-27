@@ -1,4 +1,3 @@
-
 FROM alpine:latest
 #Setting working directory.
 WORKDIR /app
