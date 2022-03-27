@@ -1,11 +1,10 @@
-FROM node:14
-#Setting working directory.
-WORKDIR /usr/src/app
-#Installing application dependencies
-COPY package*.json ./
-RUN npm install
 
+FROM alpine:latest
+#Setting working directory.
+WORKDIR /app
+COPY . /app
+#Installing application dependencies
+RUN apk add nodejs npm
 #Bundle app source
-COPY . .
-EXPOSE 3000
-CMD ["node" "index.js"]
+EXPOSE 8081
+CMD ["node", "index.js"]
